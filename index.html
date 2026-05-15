@@ -1,0 +1,139 @@
+<!doctype html>
+
+<!--<html>タグだよ、HTML文書であることを表す最上位のタグだよ-->
+<!--ページ内容が日本語であることを示すため、lang属性に"ja"を設定しているよ-->
+<html lang="ja">
+	
+	<!--<head>タグだよ、ページのタイトルや設定などを記述するよ-->
+	<!--CSSによる書式設定も<head>タグの中に記述されるよ-->
+	<!--<head>タグに記述した内容はページには表示されないよ-->
+    <head>
+		
+		<!--<meta>タグだよ、ページのメタ情報 (説明書) を記述するよ-->
+		<!--charset属性はページの文字コードを指定するよ-->
+		<!--utf-8はUnicodeで用いられている文字符号化形式だよ、日本語にも対応しているよ-->
+        <meta charset="utf-8" />
+        
+        <!--<title>タグだよ、ページのタイトルを記述するよ-->
+		<!--ページタイトルは上部のタイトルバーにも記載されるよ-->
+        <title>My Portfolio</title>
+        
+        <!--<meta>タグにはページの説明を記載することもあるよ-->
+        <!--name属性は説明のタイトル、content属性は説明の内容を記述するよ-->
+        <!--name属性にdescriptionを記述したとき、この説明は「メタディスクリプション」と呼ばれ、ページの概要を表すよ-->
+        <meta
+            name="description"
+            content="Webエンジニアのポートフォリオサイトです。スキルや制作実績を掲載しています。"
+        />
+        
+        <!--name属性にviewportを記述すると、ブラウザでの表示領域を規定できるよ-->
+        <!--content属性にwidth=device-widthと表記することで、レイアウト領域を、実際に表示される領域に合わせるよ-->
+        <!--スマホに表示することを想定している場合はこのように表示領域を設定することが多いよ-->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        
+        <!--CSSファイルをHTMLファイルの外部に作成し、読み込むことで書式を設定することもできるよ-->
+        <!--rel属性のstylesheetは外部のスタイルシートを参照していることを示すよ-->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/ress/dist/ress.min.css"
+        />
+        
+        <!--rel属性にpreconnectを指定すると、参照先のリンクがページ読み込み前に読み込まれるよ-->
+        <!--リンクを事前に読み込んでおくことで、このページの読み込み速度が上がるよ-->
+        <!--preconnectは1つのページに2回まで使うことができるよ-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <style>
+			.rainbow{
+				background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783,#e60000) 0 / 200%;
+                animation: 5s rainbow linear infinite;
+            }
+            @keyframes rainbow{
+				100% { background-position: 200%; }
+			}
+		</style>
+        
+    </head>
+
+    <!--<body>タグだよ、ここに書かれた内容がページに反映されるよ-->
+    <body>
+		
+		<!--<div>タグは、ブロック要素を区切るのに用いられるよ-->
+		<!--今回は、このタグに囲まれた部分にcover cover-homeクラスのCSSが適用されるよ-->
+		<!--今回、cover cover-homeクラスは、灰色の背景を表すよ-->
+        <div class="cover cover-home rainbow">
+			
+			<!--<header>タグは、囲まれた部分がヘッダーであることを表すよ-->
+			<!--だからと言って何か変わるわけではなく、単にヘッダーであることを示しているだけだよ-->
+			<!--page-header wrapperクラスが適用されているよ、恐らくメニューのブロックを規定しているよ-->
+            <header class="page-header wrapper">
+				
+				<!--中央揃えの見出しであることを示しているよ-->
+                <h1 class="align-center">
+					
+					<!--<a>タグだよ、囲まれた部分がリンクになるよ-->
+					<!--href属性には参照先のリンクを指定するよ、今回はクラス指定でフォントを規定しているよ-->
+					<!--<1>タグで囲まれたMy Portfolioをクリックするとindex.html(このページ)に遷移するよ-->
+                    <a href="index.html" class="logo-text font-english"
+                        >My Portfolio</a
+                    >
+                </h1>
+                
+                <!--<nav>タグはナビゲーションを表し、ページ内の主要な案内を行うよ-->
+				<!--1つのページに複数おくこともできるけど、普通は1ページに1つだけ設置するよ-->
+                <nav>
+					
+					<!--<ul>タグはタグの中が箇条書きであることを表すよ-->
+					<!--<ul>タグは項目に順番がない箇条書き、<ol>タグは項目に順序がある列挙を表すよ-->
+                    <ul class="main-nav font-english">
+						
+						<!--箇条書きの各項目には<li>タグを用いるよ-->
+						<!--今回は、<li>タグの各要素に各ページへ遷移を行う<a>タグが使われているよ-->
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="works.html">Works</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <h2 class="page-title font-english">Hello, World.</h2>
+        </div>
+
+        <!--<section>タグはセクションを区切るために用いるタグだよ-->
+		<!--セクション区切りに用いることと規定されているだけで、やっていることは<div>タグと変わらないよ-->
+        <section class="about">
+            <h3 class="heading-large font-english">About Me</h3>
+            <p class = "align-center">
+                2026年入社のエンジニアです。Java、SQLなどを学習中です。 </br>
+                新しいことへの積極的な挑戦を心がけています。
+                たくさんご飯を食べるのが好きです。
+            </p>
+            <div class="align-center">
+                <a class="btn" href="TODO　path">制作実績を見る</a>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <h3 class="heading-large font-english">Contact & Info</h3>
+            <table class="info">
+                <tr>
+                    <th>Email</th>
+                    <td>contact@example.com</td>
+                </tr>
+                <tr>
+                    <th>GitHub</th>
+                    <td><a href="https://github.com/">@your_github</a></td>
+                </tr>
+            </table>
+            <div class="copyright">
+                <small>&copy; 2026 My Portfolio</small>
+            </div>
+        </footer>
+    </body>
+</html>
